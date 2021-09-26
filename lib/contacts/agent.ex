@@ -18,11 +18,10 @@ defmodule Exgenda.Contacts.Agent do
     end
   end
 
-  defp save_contact(state, %Contact{user_cpf: user_cpf  } = contact) do
+  defp save_contact(state, %Contact{user_cpf: user_cpf} = contact) do
     case Map.get(state, user_cpf) do
       nil -> Map.put(state, user_cpf, contact)
       contacts -> Map.put(state, user_cpf, [contact | contacts])
     end
   end
 end
-  
