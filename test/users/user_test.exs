@@ -13,5 +13,15 @@ defmodule Exgenda.Users.UserTest do
 
       assert response == expected_response
     end
+
+    test "when is invalid params, returns a error" do
+      params = %{name: "Leonardo", age: 20}
+
+      response = User.build(params)
+
+      expected_response = {:error, "Invalid params"}
+
+      assert response == expected_response
+    end
   end
 end
